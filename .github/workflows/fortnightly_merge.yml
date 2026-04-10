@@ -3,7 +3,7 @@ name: Fortnightly topic merge
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 21 */14 * *"   # every 14 days at 21:00 UTC
+    - cron: "0 21 */14 * *"
 
 permissions:
   contents: write
@@ -39,7 +39,6 @@ jobs:
             any::tidyr
             any::janitor
             any::tibble
-	    any::gtrendsR
 
       - name: Verify packages
         shell: Rscript {0}
