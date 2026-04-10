@@ -25,16 +25,27 @@ run_date_chr <- as.character(run_date)
 
 message("Running daily scrape for: ", run_date_chr)
 
-search_terms <- c(
+# -------------------------
+# Search terms
+# -------------------------
+# Start broad for stability.
+# You can add niche terms later once the pipeline is stable.
+broad_terms <- c(
   "spanking",
-  "domestic discipline",
-  "impact play",
-  "otk",
-  "adult corporal punishment",
   "spanko",
-  "spanking only",
+  "impact play",
   "bdsm"
 )
+
+niche_terms <- c(
+  "domestic discipline",
+  "otk",
+  "adult corporal punishment",
+  "spanking only"
+)
+
+# Use all terms for now, but broad terms are more likely to return data.
+search_terms <- c(broad_terms, niche_terms)
 
 country_map <- c(
   AU = "Australia",
@@ -50,33 +61,48 @@ subreddits <- c(
   "domesticdiscipline"
 )
 
-safe_gtrends_region <- function(keyword, geo_code, timeframe = "now 7-d") {
+# -------------------------
+# Helpers
+# -------------------------
+parse_trends_hits <- function(x) {
+  x_chr <- as.character(x)
+
+  case_when(
+    is.na(x_chr) ~ NA_real_,
+    x_chr == "" ~ NA_real_,
+    x_chr == "<1" ~ 0.5,
+    TRUE ~ suppressWarnings(as.numeric(x_chr))
+  )
+}
+
+safe_gtrends_region <- function(keyword, geo_code, timeframe = "today 12-m") {
   tryCatch({
     res <- gtrendsR::gtrends(
       keyword = keyword,
       geo = geo_code,
       time = timeframe
     )
-    
+
     region_df <- res$interest_by_region
-    
+
     if (is.null(region_df) || nrow(region_df) == 0) {
+      message("Google Trends returned no regional rows for ", keyword, " / ", geo_code)
       return(tibble())
     }
-    
+
     region_df %>%
       clean_names() %>%
       mutate(
         scrape_date = run_date_chr,
-        source = "google_trends",
+        source = "google_trends_region",
         country_code = geo_code,
         country_name = country_map[[geo_code]] %||% geo_code,
-        query_term = keyword
+        query_term = keyword,
+        timeframe = timeframe,
+        interest_score_raw = as.character(hits),
+        interest_score = parse_trends_hits(hits)
       ) %>%
-      rename(
-        region = location,
-        interest_score = hits
-      ) %>%
+      rename(region = location) %>%
       select(
         scrape_date,
         source,
@@ -84,7 +110,9 @@ safe_gtrends_region <- function(keyword, geo_code, timeframe = "now 7-d") {
         country_name,
         region,
         query_term,
+        timeframe,
         interest_score,
+        interest_score_raw,
         everything()
       )
   }, error = function(e) {
@@ -93,35 +121,108 @@ safe_gtrends_region <- function(keyword, geo_code, timeframe = "now 7-d") {
   })
 }
 
-google_df <- purrr::map_dfr(names(country_map), function(one_country) {
-  purrr::map_dfr(search_terms, function(one_term) {
-    safe_gtrends_region(keyword = one_term, geo_code = one_country, timeframe = "now 7-d")
+safe_gtrends_over_time <- function(keyword, geo_code, timeframe = "today 12-m") {
+  tryCatch({
+    res <- gtrendsR::gtrends(
+      keyword = keyword,
+      geo = geo_code,
+      time = timeframe
+    )
+
+    over_time_df <- res$interest_over_time
+
+    if (is.null(over_time_df) || nrow(over_time_df) == 0) {
+      message("Google Trends returned no over-time rows for ", keyword, " / ", geo_code)
+      return(tibble())
+    }
+
+    over_time_df %>%
+      clean_names() %>%
+      mutate(
+        scrape_date = run_date_chr,
+        source = "google_trends_over_time",
+        country_code = geo_code,
+        country_name = country_map[[geo_code]] %||% geo_code,
+        timeframe = timeframe,
+        interest_score_raw = as.character(hits),
+        interest_score = parse_trends_hits(hits)
+      ) %>%
+      select(
+        scrape_date,
+        source,
+        country_code,
+        country_name,
+        keyword,
+        date,
+        timeframe,
+        interest_score,
+        interest_score_raw,
+        everything()
+      )
+  }, error = function(e) {
+    message("Google Trends over-time failed for ", keyword, " / ", geo_code, ": ", e$message)
+    tibble()
+  })
+}
+
+# -------------------------
+# GOOGLE TRENDS SCRAPE
+# -------------------------
+# Regional comparison
+google_region_df <- map_dfr(names(country_map), function(one_country) {
+  map_dfr(search_terms, function(one_term) {
+    safe_gtrends_region(
+      keyword = one_term,
+      geo_code = one_country,
+      timeframe = "today 12-m"
+    )
   })
 })
 
-google_outfile <- file.path(
+# Over-time comparison
+google_overtime_df <- map_dfr(names(country_map), function(one_country) {
+  map_dfr(search_terms, function(one_term) {
+    safe_gtrends_over_time(
+      keyword = one_term,
+      geo_code = one_country,
+      timeframe = "today 12-m"
+    )
+  })
+})
+
+google_region_outfile <- file.path(
   "data/raw/google",
-  paste0("google_trends_", run_date_chr, ".csv")
+  paste0("google_trends_region_", run_date_chr, ".csv")
 )
 
-write_csv(google_df, google_outfile)
+google_overtime_outfile <- file.path(
+  "data/raw/google",
+  paste0("google_trends_overtime_", run_date_chr, ".csv")
+)
 
+write_csv(google_region_df, google_region_outfile)
+write_csv(google_overtime_df, google_overtime_outfile)
+
+# -------------------------
+# REDDIT RSS SCRAPE
+# -------------------------
 get_reddit_rss <- function(subreddit) {
   url <- paste0("https://www.reddit.com/r/", subreddit, "/.rss")
-  
+
   resp <- request(url) |>
     req_user_agent("trend-research-bot/1.0") |>
     req_perform()
-  
+
   rss_text <- resp_body_string(resp)
   rss_xml <- read_xml(rss_text)
-  
+
   items <- xml_find_all(rss_xml, ".//entry")
-  
+
   if (length(items) == 0) {
+    message("No Reddit RSS entries found for /r/", subreddit)
     return(tibble())
   }
-  
+
   tibble(
     scrape_date = run_date_chr,
     source = "reddit_rss",
@@ -134,9 +235,9 @@ get_reddit_rss <- function(subreddit) {
   )
 }
 
-reddit_df <- purrr::map_dfr(
+reddit_df <- map_dfr(
   subreddits,
-  purrr::possibly(get_reddit_rss, otherwise = tibble())
+  possibly(get_reddit_rss, otherwise = tibble())
 )
 
 reddit_outfile <- file.path(
@@ -146,21 +247,43 @@ reddit_outfile <- file.path(
 
 write_csv(reddit_df, reddit_outfile)
 
+# Optional raw XML archive
+for (sr in subreddits) {
+  try({
+    url <- paste0("https://www.reddit.com/r/", sr, "/.rss")
+    resp <- request(url) |>
+      req_user_agent("trend-research-bot/1.0") |>
+      req_perform()
+
+    xml_text_value <- resp_body_string(resp)
+    xml_file <- file.path("data/raw/reddit", paste0("reddit_rss_", sr, "_", run_date_chr, ".xml"))
+    writeLines(xml_text_value, xml_file, useBytes = TRUE)
+  }, silent = TRUE)
+}
+
+# -------------------------
+# LOGGING
+# -------------------------
 log_df <- tibble(
   run_datetime_utc = format(with_tz(now("UTC"), "UTC"), "%Y-%m-%d %H:%M:%S"),
   run_date = run_date_chr,
-  google_rows = nrow(google_df),
+  google_region_rows = nrow(google_region_df),
+  google_overtime_rows = nrow(google_overtime_df),
   reddit_rows = nrow(reddit_df),
   google_terms = length(search_terms),
   google_countries = length(country_map),
   reddit_subreddits = length(subreddits)
 )
 
-write_csv(
-  log_df,
-  file.path("data/processed/logs", paste0("daily_scrape_log_", run_date_chr, ".csv"))
+log_outfile <- file.path(
+  "data/processed/logs",
+  paste0("daily_scrape_log_", run_date_chr, ".csv")
 )
 
-message("Saved Google data to: ", google_outfile)
+write_csv(log_df, log_outfile)
+
+message("Saved Google region data to: ", google_region_outfile)
+message("Saved Google over-time data to: ", google_overtime_outfile)
 message("Saved Reddit data to: ", reddit_outfile)
+message("Saved log to: ", log_outfile)
 message("Done.")
