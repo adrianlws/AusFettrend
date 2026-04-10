@@ -54,8 +54,9 @@ if (nrow(reddit_df) > 0) {
       topic_group = assign_topic_group(topic_text, rules)
     )
   
-  reddit_summary <- reddit_df %>%
-    count(scrape_date, subreddit, topic_group, sort = TRUE, name = "post_count")
+ reddit_summary <- reddit_df %>%
+  group_by(scrape_date, subreddit, topic_group) %>%
+  summarise(post_count = n(), .groups = "drop")
   
   reddit_keywords <- extract_keywords_simple(
     reddit_df$title,
@@ -116,18 +117,44 @@ if (nrow(google_df) > 0) {
   google_country_summary <- tibble()
 }
 
-combined_overview <- bind_rows(
-  reddit_summary %>%
-    mutate(source = "reddit", geography = subreddit, metric = post_count) %>%
-    select(source, scrape_date, geography, topic_group, metric),
-  google_country_summary %>%
-    mutate(source = "google_country", geography = country_code, metric = avg_interest) %>%
+combined_parts <- list()
+
+if (exists("reddit_summary") && nrow(reddit_summary) > 0) {
+  if ("subreddit" %in% names(reddit_summary)) {
+    combined_parts[[length(combined_parts) + 1]] <- reddit_summary %>%
+      mutate(
+        source = "reddit",
+        geography = subreddit,
+        metric = post_count
+      ) %>%
+      select(source, scrape_date, geography, topic_group, metric)
+  }
+}
+
+if (exists("google_country_summary") && nrow(google_country_summary) > 0) {
+  combined_parts[[length(combined_parts) + 1]] <- google_country_summary %>%
+    mutate(
+      source = "google_country",
+      geography = country_code,
+      metric = avg_interest
+    ) %>%
     select(source, scrape_date, geography, topic_group, metric)
-)
+}
+
+combined_overview <- if (length(combined_parts) > 0) {
+  bind_rows(combined_parts)
+} else {
+  tibble(
+    source = character(),
+    scrape_date = as.Date(character()),
+    geography = character(),
+    topic_group = character(),
+    metric = numeric()
+  )
+}
 
 write_csv(
   combined_overview,
   file.path("data/processed/fortnightly", paste0("combined_overview_", period_label, ".csv"))
 )
-
 message("Fortnightly merge complete.")
