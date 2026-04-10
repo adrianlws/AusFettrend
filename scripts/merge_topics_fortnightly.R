@@ -29,7 +29,7 @@ reddit_files <- list.files(
 
 google_files <- list.files(
   "data/raw/google",
-pattern = "^google_trends_region_\\d{4}-\\d{2}-\\d{2}\\.csv$"
+  pattern = "^google_trends_region_\\d{4}-\\d{2}-\\d{2}\\.csv$",
   full.names = TRUE
 )
 
