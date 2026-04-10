@@ -3,7 +3,7 @@ name: Daily scrape
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 20 * * *"   # 20:30 UTC daily
+    - cron: "30 20 * * *"
 
 permissions:
   contents: write
@@ -42,12 +42,12 @@ jobs:
             any::janitor
             any::xml2
             any::tibble
-     	    any::gtrendsR
+            any::gtrendsR
 
       - name: Verify packages
         shell: Rscript {0}
         run: |
-          pkgs <- c("dplyr","readr","stringr","purrr","lubridate","jsonlite","httr2","tidyr","janitor","xml2","tibble")
+          pkgs <- c("dplyr","readr","stringr","purrr","lubridate","jsonlite","httr2","tidyr","janitor","xml2","tibble","gtrendsR")
           ok <- vapply(pkgs, requireNamespace, quietly = TRUE, FUN.VALUE = logical(1))
           print(ok)
           if (!all(ok)) stop("Missing packages: ", paste(names(ok)[!ok], collapse = ", "))
@@ -64,9 +64,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
           git add data/raw/
-
           if git diff --cached --quiet; then
             echo "No raw data changes to commit"
           else
