@@ -1,0 +1,456 @@
+country_code,country_name,region,topic_group,avg_interest,n_queries
+AU,Australia,Australian Capital Territory,bdsm_general,76,1
+AU,Australia,Australian Capital Territory,impact_play,74,1
+AU,Australia,Australian Capital Territory,spanking,65,1
+AU,Australia,Australian Capital Territory,otk,63,1
+AU,Australia,Australian Capital Territory,domestic_discipline,NA,1
+AU,Australia,New South Wales,impact_play,92,1
+AU,Australia,New South Wales,otk,88,1
+AU,Australia,New South Wales,bdsm_general,83,1
+AU,Australia,New South Wales,spanking,75,1
+AU,Australia,New South Wales,domestic_discipline,33,1
+AU,Australia,Northern Territory,impact_play,100,1
+AU,Australia,Northern Territory,bdsm_general,81,1
+AU,Australia,Northern Territory,spanking,61,1
+AU,Australia,Northern Territory,domestic_discipline,NA,1
+AU,Australia,Northern Territory,otk,NA,1
+AU,Australia,Queensland,bdsm_general,100,1
+AU,Australia,Queensland,domestic_discipline,100,1
+AU,Australia,Queensland,impact_play,79,1
+AU,Australia,Queensland,spanking,78,1
+AU,Australia,Queensland,otk,77,1
+AU,Australia,South Australia,otk,100,1
+AU,Australia,South Australia,spanking,100,1
+AU,Australia,South Australia,impact_play,85,1
+AU,Australia,South Australia,bdsm_general,82,1
+AU,Australia,South Australia,domestic_discipline,NA,1
+AU,Australia,Tasmania,bdsm_general,97,1
+AU,Australia,Tasmania,otk,77,1
+AU,Australia,Tasmania,impact_play,58,1
+AU,Australia,Tasmania,spanking,56,1
+AU,Australia,Tasmania,domestic_discipline,NA,1
+AU,Australia,Victoria,otk,97,1
+AU,Australia,Victoria,bdsm_general,84,1
+AU,Australia,Victoria,impact_play,83,1
+AU,Australia,Victoria,spanking,77,1
+AU,Australia,Victoria,domestic_discipline,16,1
+AU,Australia,Western Australia,bdsm_general,88,1
+AU,Australia,Western Australia,otk,77,1
+AU,Australia,Western Australia,spanking,77,1
+AU,Australia,Western Australia,impact_play,74,1
+AU,Australia,Western Australia,domestic_discipline,NA,1
+GB,United Kingdom,England,bdsm_general,100,1
+GB,United Kingdom,England,impact_play,100,1
+GB,United Kingdom,England,otk,69,1
+GB,United Kingdom,England,spanking,64.5,3
+GB,United Kingdom,England,domestic_discipline,50,1
+GB,United Kingdom,England,adult_corporal_punishment,NA,1
+GB,United Kingdom,Northern Ireland,otk,85,1
+GB,United Kingdom,Northern Ireland,impact_play,80,1
+GB,United Kingdom,Northern Ireland,bdsm_general,79,1
+GB,United Kingdom,Northern Ireland,spanking,79,3
+GB,United Kingdom,Northern Ireland,adult_corporal_punishment,NA,1
+GB,United Kingdom,Northern Ireland,domestic_discipline,NA,1
+GB,United Kingdom,Scotland,adult_corporal_punishment,100,1
+GB,United Kingdom,Scotland,domestic_discipline,100,1
+GB,United Kingdom,Scotland,otk,100,1
+GB,United Kingdom,Scotland,spanking,99,3
+GB,United Kingdom,Scotland,impact_play,90,1
+GB,United Kingdom,Scotland,bdsm_general,86,1
+GB,United Kingdom,Wales,spanking,100,3
+GB,United Kingdom,Wales,impact_play,98,1
+GB,United Kingdom,Wales,bdsm_general,97,1
+GB,United Kingdom,Wales,otk,83,1
+GB,United Kingdom,Wales,adult_corporal_punishment,NA,1
+GB,United Kingdom,Wales,domestic_discipline,NA,1
+NZ,New Zealand,Auckland,impact_play,87,1
+NZ,New Zealand,Auckland,bdsm_general,42,1
+NZ,New Zealand,Auckland,otk,20,1
+NZ,New Zealand,Auckland,spanking,20,1
+NZ,New Zealand,Auckland,adult_corporal_punishment,NA,1
+NZ,New Zealand,Bay Of Plenty,bdsm_general,59,1
+NZ,New Zealand,Bay Of Plenty,spanking,19,1
+NZ,New Zealand,Bay Of Plenty,adult_corporal_punishment,NA,1
+NZ,New Zealand,Bay Of Plenty,impact_play,NA,1
+NZ,New Zealand,Bay Of Plenty,otk,NA,1
+NZ,New Zealand,Canterbury,impact_play,55,1
+NZ,New Zealand,Canterbury,bdsm_general,51,1
+NZ,New Zealand,Canterbury,spanking,21,1
+NZ,New Zealand,Canterbury,otk,19,1
+NZ,New Zealand,Canterbury,adult_corporal_punishment,NA,1
+NZ,New Zealand,Chatham Islands,adult_corporal_punishment,NA,1
+NZ,New Zealand,Chatham Islands,bdsm_general,NA,1
+NZ,New Zealand,Chatham Islands,impact_play,NA,1
+NZ,New Zealand,Chatham Islands,otk,NA,1
+NZ,New Zealand,Chatham Islands,spanking,NA,1
+NZ,New Zealand,Gisborne,adult_corporal_punishment,NA,1
+NZ,New Zealand,Gisborne,bdsm_general,NA,1
+NZ,New Zealand,Gisborne,impact_play,NA,1
+NZ,New Zealand,Gisborne,otk,NA,1
+NZ,New Zealand,Gisborne,spanking,NA,1
+NZ,New Zealand,Hawke's Bay,bdsm_general,37,1
+NZ,New Zealand,Hawke's Bay,spanking,12,1
+NZ,New Zealand,Hawke's Bay,adult_corporal_punishment,NA,1
+NZ,New Zealand,Hawke's Bay,impact_play,NA,1
+NZ,New Zealand,Hawke's Bay,otk,NA,1
+NZ,New Zealand,Manawatu-Wanganui,impact_play,100,1
+NZ,New Zealand,Manawatu-Wanganui,bdsm_general,53,1
+NZ,New Zealand,Manawatu-Wanganui,spanking,13,1
+NZ,New Zealand,Manawatu-Wanganui,adult_corporal_punishment,NA,1
+NZ,New Zealand,Manawatu-Wanganui,otk,NA,1
+NZ,New Zealand,Marlborough,spanking,100,1
+NZ,New Zealand,Marlborough,bdsm_general,77,1
+NZ,New Zealand,Marlborough,adult_corporal_punishment,NA,1
+NZ,New Zealand,Marlborough,impact_play,NA,1
+NZ,New Zealand,Marlborough,otk,NA,1
+NZ,New Zealand,Nelson,bdsm_general,69,1
+NZ,New Zealand,Nelson,spanking,31,1
+NZ,New Zealand,Nelson,adult_corporal_punishment,NA,1
+NZ,New Zealand,Nelson,impact_play,NA,1
+NZ,New Zealand,Nelson,otk,NA,1
+NZ,New Zealand,Northland,bdsm_general,47,1
+NZ,New Zealand,Northland,spanking,22,1
+NZ,New Zealand,Northland,adult_corporal_punishment,NA,1
+NZ,New Zealand,Northland,impact_play,NA,1
+NZ,New Zealand,Northland,otk,NA,1
+NZ,New Zealand,Otago,impact_play,85,1
+NZ,New Zealand,Otago,bdsm_general,57,1
+NZ,New Zealand,Otago,spanking,22,1
+NZ,New Zealand,Otago,adult_corporal_punishment,NA,1
+NZ,New Zealand,Otago,otk,NA,1
+NZ,New Zealand,Southland,otk,100,1
+NZ,New Zealand,Southland,bdsm_general,44,1
+NZ,New Zealand,Southland,spanking,27,1
+NZ,New Zealand,Southland,adult_corporal_punishment,NA,1
+NZ,New Zealand,Southland,impact_play,NA,1
+NZ,New Zealand,Taranaki,bdsm_general,48,1
+NZ,New Zealand,Taranaki,spanking,29,1
+NZ,New Zealand,Taranaki,adult_corporal_punishment,NA,1
+NZ,New Zealand,Taranaki,impact_play,NA,1
+NZ,New Zealand,Taranaki,otk,NA,1
+NZ,New Zealand,Tasman,bdsm_general,56,1
+NZ,New Zealand,Tasman,spanking,44,1
+NZ,New Zealand,Tasman,adult_corporal_punishment,NA,1
+NZ,New Zealand,Tasman,impact_play,NA,1
+NZ,New Zealand,Tasman,otk,NA,1
+NZ,New Zealand,Waikato,impact_play,58,1
+NZ,New Zealand,Waikato,bdsm_general,51,1
+NZ,New Zealand,Waikato,otk,21,1
+NZ,New Zealand,Waikato,spanking,20,1
+NZ,New Zealand,Waikato,adult_corporal_punishment,NA,1
+NZ,New Zealand,Wellington,impact_play,68,1
+NZ,New Zealand,Wellington,bdsm_general,52,1
+NZ,New Zealand,Wellington,spanking,26,1
+NZ,New Zealand,Wellington,otk,25,1
+NZ,New Zealand,Wellington,adult_corporal_punishment,NA,1
+NZ,New Zealand,West Coast,bdsm_general,100,1
+NZ,New Zealand,West Coast,adult_corporal_punishment,NA,1
+NZ,New Zealand,West Coast,impact_play,NA,1
+NZ,New Zealand,West Coast,otk,NA,1
+NZ,New Zealand,West Coast,spanking,NA,1
+US,United States,Alabama,bdsm_general,81,1
+US,United States,Alabama,otk,59,1
+US,United States,Alabama,impact_play,50,1
+US,United States,Alabama,spanking,39.25,3
+US,United States,Alabama,domestic_discipline,19,1
+US,United States,Alabama,adult_corporal_punishment,NA,1
+US,United States,Alaska,spanking,99,3
+US,United States,Alaska,bdsm_general,96,1
+US,United States,Alaska,impact_play,58,1
+US,United States,Alaska,otk,42,1
+US,United States,Alaska,adult_corporal_punishment,NA,1
+US,United States,Alaska,domestic_discipline,NA,1
+US,United States,Arizona,adult_corporal_punishment,100,1
+US,United States,Arizona,otk,83,1
+US,United States,Arizona,bdsm_general,81,1
+US,United States,Arizona,spanking,79,3
+US,United States,Arizona,impact_play,43,1
+US,United States,Arizona,domestic_discipline,14,1
+US,United States,Arkansas,spanking,85,3
+US,United States,Arkansas,bdsm_general,84,1
+US,United States,Arkansas,otk,71,1
+US,United States,Arkansas,impact_play,47,1
+US,United States,Arkansas,domestic_discipline,38,1
+US,United States,Arkansas,adult_corporal_punishment,NA,1
+US,United States,California,bdsm_general,76,1
+US,United States,California,otk,71,1
+US,United States,California,impact_play,54,1
+US,United States,California,spanking,35.833333333333336,3
+US,United States,California,domestic_discipline,14,1
+US,United States,California,adult_corporal_punishment,NA,1
+US,United States,Colorado,bdsm_general,79,1
+US,United States,Colorado,otk,57,1
+US,United States,Colorado,spanking,55,3
+US,United States,Colorado,impact_play,46,1
+US,United States,Colorado,domestic_discipline,9,1
+US,United States,Colorado,adult_corporal_punishment,NA,1
+US,United States,Connecticut,spanking,71,3
+US,United States,Connecticut,bdsm_general,68,1
+US,United States,Connecticut,otk,66,1
+US,United States,Connecticut,impact_play,41,1
+US,United States,Connecticut,domestic_discipline,9,1
+US,United States,Connecticut,adult_corporal_punishment,NA,1
+US,United States,Delaware,spanking,83,3
+US,United States,Delaware,bdsm_general,73,1
+US,United States,Delaware,otk,71,1
+US,United States,Delaware,impact_play,36,1
+US,United States,Delaware,adult_corporal_punishment,NA,1
+US,United States,Delaware,domestic_discipline,NA,1
+US,United States,District of Columbia,bdsm_general,61,1
+US,United States,District of Columbia,spanking,59,3
+US,United States,District of Columbia,otk,45,1
+US,United States,District of Columbia,impact_play,43,1
+US,United States,District of Columbia,adult_corporal_punishment,NA,1
+US,United States,District of Columbia,domestic_discipline,NA,1
+US,United States,Florida,bdsm_general,70,1
+US,United States,Florida,otk,64,1
+US,United States,Florida,spanking,57,3
+US,United States,Florida,impact_play,48,1
+US,United States,Florida,domestic_discipline,14,1
+US,United States,Florida,adult_corporal_punishment,NA,1
+US,United States,Georgia,bdsm_general,75,1
+US,United States,Georgia,otk,64,1
+US,United States,Georgia,spanking,57,3
+US,United States,Georgia,impact_play,52,1
+US,United States,Georgia,domestic_discipline,19,1
+US,United States,Georgia,adult_corporal_punishment,NA,1
+US,United States,Hawaii,bdsm_general,61,1
+US,United States,Hawaii,otk,61,1
+US,United States,Hawaii,spanking,53,3
+US,United States,Hawaii,impact_play,34,1
+US,United States,Hawaii,adult_corporal_punishment,NA,1
+US,United States,Hawaii,domestic_discipline,NA,1
+US,United States,Idaho,bdsm_general,79,1
+US,United States,Idaho,spanking,65,3
+US,United States,Idaho,otk,57,1
+US,United States,Idaho,impact_play,33,1
+US,United States,Idaho,adult_corporal_punishment,NA,1
+US,United States,Idaho,domestic_discipline,NA,1
+US,United States,Illinois,bdsm_general,78,1
+US,United States,Illinois,otk,71,1
+US,United States,Illinois,spanking,57.833333333333336,3
+US,United States,Illinois,impact_play,39,1
+US,United States,Illinois,domestic_discipline,19,1
+US,United States,Illinois,adult_corporal_punishment,NA,1
+US,United States,Indiana,bdsm_general,86,1
+US,United States,Indiana,otk,83,1
+US,United States,Indiana,spanking,78,3
+US,United States,Indiana,impact_play,43,1
+US,United States,Indiana,domestic_discipline,23,1
+US,United States,Indiana,adult_corporal_punishment,NA,1
+US,United States,Iowa,bdsm_general,78,1
+US,United States,Iowa,spanking,70,3
+US,United States,Iowa,otk,59,1
+US,United States,Iowa,impact_play,37,1
+US,United States,Iowa,adult_corporal_punishment,NA,1
+US,United States,Iowa,domestic_discipline,NA,1
+US,United States,Kansas,bdsm_general,84,1
+US,United States,Kansas,spanking,78,3
+US,United States,Kansas,impact_play,58,1
+US,United States,Kansas,otk,47,1
+US,United States,Kansas,domestic_discipline,28,1
+US,United States,Kansas,adult_corporal_punishment,NA,1
+US,United States,Kentucky,bdsm_general,89,1
+US,United States,Kentucky,spanking,88,3
+US,United States,Kentucky,otk,66,1
+US,United States,Kentucky,impact_play,48,1
+US,United States,Kentucky,domestic_discipline,14,1
+US,United States,Kentucky,adult_corporal_punishment,NA,1
+US,United States,Louisiana,bdsm_general,76,1
+US,United States,Louisiana,impact_play,58,1
+US,United States,Louisiana,spanking,56,3
+US,United States,Louisiana,otk,47,1
+US,United States,Louisiana,domestic_discipline,14,1
+US,United States,Louisiana,adult_corporal_punishment,NA,1
+US,United States,Maine,bdsm_general,91,1
+US,United States,Maine,spanking,86,3
+US,United States,Maine,otk,71,1
+US,United States,Maine,impact_play,32,1
+US,United States,Maine,adult_corporal_punishment,NA,1
+US,United States,Maine,domestic_discipline,NA,1
+US,United States,Maryland,bdsm_general,84,1
+US,United States,Maryland,otk,69,1
+US,United States,Maryland,spanking,63,3
+US,United States,Maryland,impact_play,45,1
+US,United States,Maryland,domestic_discipline,19,1
+US,United States,Maryland,adult_corporal_punishment,NA,1
+US,United States,Massachusetts,otk,78,1
+US,United States,Massachusetts,bdsm_general,77,1
+US,United States,Massachusetts,spanking,72.33333333333333,3
+US,United States,Massachusetts,impact_play,47,1
+US,United States,Massachusetts,domestic_discipline,23,1
+US,United States,Massachusetts,adult_corporal_punishment,NA,1
+US,United States,Michigan,bdsm_general,92,1
+US,United States,Michigan,otk,78,1
+US,United States,Michigan,spanking,69,3
+US,United States,Michigan,impact_play,38,1
+US,United States,Michigan,domestic_discipline,19,1
+US,United States,Michigan,adult_corporal_punishment,NA,1
+US,United States,Minnesota,bdsm_general,81,1
+US,United States,Minnesota,otk,66,1
+US,United States,Minnesota,spanking,65,3
+US,United States,Minnesota,impact_play,39,1
+US,United States,Minnesota,domestic_discipline,9,1
+US,United States,Minnesota,adult_corporal_punishment,NA,1
+US,United States,Mississippi,bdsm_general,66,1
+US,United States,Mississippi,spanking,66,3
+US,United States,Mississippi,impact_play,57,1
+US,United States,Mississippi,otk,47,1
+US,United States,Mississippi,adult_corporal_punishment,NA,1
+US,United States,Mississippi,domestic_discipline,NA,1
+US,United States,Missouri,bdsm_general,94,1
+US,United States,Missouri,otk,80,1
+US,United States,Missouri,spanking,65,3
+US,United States,Missouri,impact_play,45,1
+US,United States,Missouri,domestic_discipline,19,1
+US,United States,Missouri,adult_corporal_punishment,NA,1
+US,United States,Montana,bdsm_general,91,1
+US,United States,Montana,spanking,73,3
+US,United States,Montana,otk,57,1
+US,United States,Montana,impact_play,34,1
+US,United States,Montana,adult_corporal_punishment,NA,1
+US,United States,Montana,domestic_discipline,NA,1
+US,United States,Nebraska,bdsm_general,74,1
+US,United States,Nebraska,spanking,70,3
+US,United States,Nebraska,otk,54,1
+US,United States,Nebraska,impact_play,39,1
+US,United States,Nebraska,adult_corporal_punishment,NA,1
+US,United States,Nebraska,domestic_discipline,NA,1
+US,United States,Nevada,bdsm_general,89,1
+US,United States,Nevada,otk,76,1
+US,United States,Nevada,spanking,67,3
+US,United States,Nevada,impact_play,49,1
+US,United States,Nevada,adult_corporal_punishment,NA,1
+US,United States,Nevada,domestic_discipline,NA,1
+US,United States,New Hampshire,bdsm_general,85,1
+US,United States,New Hampshire,spanking,81,3
+US,United States,New Hampshire,otk,66,1
+US,United States,New Hampshire,domestic_discipline,38,1
+US,United States,New Hampshire,impact_play,28,1
+US,United States,New Hampshire,adult_corporal_punishment,NA,1
+US,United States,New Jersey,otk,76,1
+US,United States,New Jersey,bdsm_general,68,1
+US,United States,New Jersey,spanking,55.5,3
+US,United States,New Jersey,impact_play,37,1
+US,United States,New Jersey,domestic_discipline,14,1
+US,United States,New Jersey,adult_corporal_punishment,NA,1
+US,United States,New Mexico,bdsm_general,68,1
+US,United States,New Mexico,spanking,62,3
+US,United States,New Mexico,otk,59,1
+US,United States,New Mexico,impact_play,49,1
+US,United States,New Mexico,domestic_discipline,38,1
+US,United States,New Mexico,adult_corporal_punishment,NA,1
+US,United States,New York,adult_corporal_punishment,100,1
+US,United States,New York,bdsm_general,84,1
+US,United States,New York,otk,71,1
+US,United States,New York,impact_play,50,1
+US,United States,New York,spanking,38.5,3
+US,United States,New York,domestic_discipline,14,1
+US,United States,North Carolina,bdsm_general,77,1
+US,United States,North Carolina,spanking,62,3
+US,United States,North Carolina,otk,61,1
+US,United States,North Carolina,impact_play,45,1
+US,United States,North Carolina,domestic_discipline,14,1
+US,United States,North Carolina,adult_corporal_punishment,NA,1
+US,United States,North Dakota,bdsm_general,81,1
+US,United States,North Dakota,spanking,61,3
+US,United States,North Dakota,otk,50,1
+US,United States,North Dakota,impact_play,30,1
+US,United States,North Dakota,adult_corporal_punishment,NA,1
+US,United States,North Dakota,domestic_discipline,NA,1
+US,United States,Ohio,bdsm_general,92,1
+US,United States,Ohio,otk,71,1
+US,United States,Ohio,spanking,70.5,3
+US,United States,Ohio,impact_play,34,1
+US,United States,Ohio,domestic_discipline,19,1
+US,United States,Ohio,adult_corporal_punishment,NA,1
+US,United States,Oklahoma,bdsm_general,90,1
+US,United States,Oklahoma,spanking,82,3
+US,United States,Oklahoma,impact_play,59,1
+US,United States,Oklahoma,otk,59,1
+US,United States,Oklahoma,domestic_discipline,28,1
+US,United States,Oklahoma,adult_corporal_punishment,NA,1
+US,United States,Oregon,bdsm_general,100,1
+US,United States,Oregon,otk,76,1
+US,United States,Oregon,spanking,70,3
+US,United States,Oregon,impact_play,39,1
+US,United States,Oregon,domestic_discipline,19,1
+US,United States,Oregon,adult_corporal_punishment,NA,1
+US,United States,Pennsylvania,bdsm_general,81,1
+US,United States,Pennsylvania,otk,76,1
+US,United States,Pennsylvania,spanking,48.5,3
+US,United States,Pennsylvania,impact_play,46,1
+US,United States,Pennsylvania,domestic_discipline,19,1
+US,United States,Pennsylvania,adult_corporal_punishment,NA,1
+US,United States,Rhode Island,otk,100,1
+US,United States,Rhode Island,spanking,93,3
+US,United States,Rhode Island,bdsm_general,82,1
+US,United States,Rhode Island,impact_play,40,1
+US,United States,Rhode Island,adult_corporal_punishment,NA,1
+US,United States,Rhode Island,domestic_discipline,NA,1
+US,United States,South Carolina,bdsm_general,70,1
+US,United States,South Carolina,spanking,64,3
+US,United States,South Carolina,otk,57,1
+US,United States,South Carolina,impact_play,47,1
+US,United States,South Carolina,domestic_discipline,14,1
+US,United States,South Carolina,adult_corporal_punishment,NA,1
+US,United States,South Dakota,bdsm_general,65,1
+US,United States,South Dakota,spanking,56,3
+US,United States,South Dakota,otk,35,1
+US,United States,South Dakota,impact_play,32,1
+US,United States,South Dakota,adult_corporal_punishment,NA,1
+US,United States,South Dakota,domestic_discipline,NA,1
+US,United States,Tennessee,bdsm_general,83,1
+US,United States,Tennessee,spanking,71,3
+US,United States,Tennessee,otk,59,1
+US,United States,Tennessee,impact_play,47,1
+US,United States,Tennessee,domestic_discipline,14,1
+US,United States,Tennessee,adult_corporal_punishment,NA,1
+US,United States,Texas,bdsm_general,67,1
+US,United States,Texas,otk,59,1
+US,United States,Texas,spanking,53,3
+US,United States,Texas,impact_play,52,1
+US,United States,Texas,domestic_discipline,14,1
+US,United States,Texas,adult_corporal_punishment,NA,1
+US,United States,Utah,bdsm_general,76,1
+US,United States,Utah,otk,66,1
+US,United States,Utah,spanking,55,3
+US,United States,Utah,impact_play,48,1
+US,United States,Utah,domestic_discipline,9,1
+US,United States,Utah,adult_corporal_punishment,NA,1
+US,United States,Vermont,bdsm_general,98,1
+US,United States,Vermont,spanking,79,3
+US,United States,Vermont,otk,64,1
+US,United States,Vermont,impact_play,38,1
+US,United States,Vermont,adult_corporal_punishment,NA,1
+US,United States,Vermont,domestic_discipline,NA,1
+US,United States,Virginia,bdsm_general,83,1
+US,United States,Virginia,otk,69,1
+US,United States,Virginia,spanking,66,3
+US,United States,Virginia,impact_play,45,1
+US,United States,Virginia,domestic_discipline,14,1
+US,United States,Virginia,adult_corporal_punishment,NA,1
+US,United States,Washington,bdsm_general,95,1
+US,United States,Washington,otk,80,1
+US,United States,Washington,spanking,70,3
+US,United States,Washington,impact_play,47,1
+US,United States,Washington,domestic_discipline,23,1
+US,United States,Washington,adult_corporal_punishment,NA,1
+US,United States,West Virginia,bdsm_general,98,1
+US,United States,West Virginia,spanking,95,3
+US,United States,West Virginia,otk,71,1
+US,United States,West Virginia,impact_play,46,1
+US,United States,West Virginia,adult_corporal_punishment,NA,1
+US,United States,West Virginia,domestic_discipline,NA,1
+US,United States,Wisconsin,bdsm_general,91,1
+US,United States,Wisconsin,otk,83,1
+US,United States,Wisconsin,spanking,73,3
+US,United States,Wisconsin,impact_play,38,1
+US,United States,Wisconsin,domestic_discipline,14,1
+US,United States,Wisconsin,adult_corporal_punishment,NA,1
+US,United States,Wyoming,domestic_discipline,100,1
+US,United States,Wyoming,impact_play,100,1
+US,United States,Wyoming,spanking,100,3
+US,United States,Wyoming,bdsm_general,89,1
+US,United States,Wyoming,otk,52,1
+US,United States,Wyoming,adult_corporal_punishment,NA,1

@@ -1,0 +1,23 @@
+country_code,country_name,topic_group,avg_interest,n_queries
+AU,Australia,bdsm_general,86.375,8
+AU,Australia,otk,82.71428571428571,8
+AU,Australia,impact_play,80.625,8
+AU,Australia,spanking,73.625,8
+AU,Australia,domestic_discipline,49.666666666666664,8
+GB,United Kingdom,adult_corporal_punishment,100,4
+GB,United Kingdom,impact_play,92,4
+GB,United Kingdom,bdsm_general,90.5,4
+GB,United Kingdom,otk,84.25,4
+GB,United Kingdom,spanking,78.58333333333333,12
+GB,United Kingdom,domestic_discipline,75,4
+NZ,New Zealand,impact_play,75.5,17
+NZ,New Zealand,bdsm_general,56.2,17
+NZ,New Zealand,otk,37,17
+NZ,New Zealand,spanking,29,17
+NZ,New Zealand,adult_corporal_punishment,NA,17
+US,United States,adult_corporal_punishment,100,51
+US,United States,bdsm_general,81.11764705882354,51
+US,United States,otk,65.09803921568627,51
+US,United States,spanking,64.52816901408451,153
+US,United States,impact_play,44.90196078431372,51
+US,United States,domestic_discipline,20.8,51
