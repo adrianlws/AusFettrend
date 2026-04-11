@@ -25,11 +25,6 @@ run_date_chr <- as.character(run_date)
 
 message("Running daily scrape for: ", run_date_chr)
 
-# -------------------------
-# Search terms
-# -------------------------
-# Start broad for stability.
-# You can add niche terms later once the pipeline is stable.
 broad_terms <- c(
   "spanking",
   "spanko",
@@ -44,7 +39,6 @@ niche_terms <- c(
   "spanking only"
 )
 
-# Use all terms for now, but broad terms are more likely to return data.
 search_terms <- c(broad_terms, niche_terms)
 
 country_map <- c(
@@ -61,13 +55,10 @@ subreddits <- c(
   "domesticdiscipline"
 )
 
-# -------------------------
-# Helpers
-# -------------------------
 parse_trends_hits <- function(x) {
   x_chr <- as.character(x)
 
-  case_when(
+  dplyr::case_when(
     is.na(x_chr) ~ NA_real_,
     x_chr == "" ~ NA_real_,
     x_chr == "<1" ~ 0.5,
@@ -91,7 +82,10 @@ safe_gtrends_region <- function(keyword, geo_code, timeframe = "today 12-m") {
     }
 
     region_df %>%
-      clean_names() %>%
+      janitor::clean_names() %>%
+      mutate(
+        hits = as.character(hits)
+      ) %>%
       mutate(
         scrape_date = run_date_chr,
         source = "google_trends_region",
@@ -99,7 +93,7 @@ safe_gtrends_region <- function(keyword, geo_code, timeframe = "today 12-m") {
         country_name = country_map[[geo_code]] %||% geo_code,
         query_term = keyword,
         timeframe = timeframe,
-        interest_score_raw = as.character(hits),
+        interest_score_raw = hits,
         interest_score = parse_trends_hits(hits)
       ) %>%
       rename(region = location) %>%
@@ -137,14 +131,17 @@ safe_gtrends_over_time <- function(keyword, geo_code, timeframe = "today 12-m") 
     }
 
     over_time_df %>%
-      clean_names() %>%
+      janitor::clean_names() %>%
+      mutate(
+        hits = as.character(hits)
+      ) %>%
       mutate(
         scrape_date = run_date_chr,
         source = "google_trends_over_time",
         country_code = geo_code,
         country_name = country_map[[geo_code]] %||% geo_code,
         timeframe = timeframe,
-        interest_score_raw = as.character(hits),
+        interest_score_raw = hits,
         interest_score = parse_trends_hits(hits)
       ) %>%
       select(
@@ -165,30 +162,31 @@ safe_gtrends_over_time <- function(keyword, geo_code, timeframe = "today 12-m") 
   })
 }
 
-# -------------------------
-# GOOGLE TRENDS SCRAPE
-# -------------------------
-# Regional comparison
-google_region_df <- map_dfr(names(country_map), function(one_country) {
-  map_dfr(search_terms, function(one_term) {
+google_region_list <- map(names(country_map), function(one_country) {
+  map(search_terms, function(one_term) {
     safe_gtrends_region(
       keyword = one_term,
       geo_code = one_country,
       timeframe = "today 12-m"
     )
   })
-})
+}) %>%
+  flatten()
 
-# Over-time comparison
-google_overtime_df <- map_dfr(names(country_map), function(one_country) {
-  map_dfr(search_terms, function(one_term) {
+google_region_df <- bind_rows(google_region_list)
+
+google_overtime_list <- map(names(country_map), function(one_country) {
+  map(search_terms, function(one_term) {
     safe_gtrends_over_time(
       keyword = one_term,
       geo_code = one_country,
       timeframe = "today 12-m"
     )
   })
-})
+}) %>%
+  flatten()
+
+google_overtime_df <- bind_rows(google_overtime_list)
 
 google_region_outfile <- file.path(
   "data/raw/google",
@@ -203,9 +201,6 @@ google_overtime_outfile <- file.path(
 write_csv(google_region_df, google_region_outfile)
 write_csv(google_overtime_df, google_overtime_outfile)
 
-# -------------------------
-# REDDIT RSS SCRAPE
-# -------------------------
 get_reddit_rss <- function(subreddit) {
   url <- paste0("https://www.reddit.com/r/", subreddit, "/.rss")
 
@@ -247,7 +242,6 @@ reddit_outfile <- file.path(
 
 write_csv(reddit_df, reddit_outfile)
 
-# Optional raw XML archive
 for (sr in subreddits) {
   try({
     url <- paste0("https://www.reddit.com/r/", sr, "/.rss")
@@ -261,9 +255,6 @@ for (sr in subreddits) {
   }, silent = TRUE)
 }
 
-# -------------------------
-# LOGGING
-# -------------------------
 log_df <- tibble(
   run_datetime_utc = format(with_tz(now("UTC"), "UTC"), "%Y-%m-%d %H:%M:%S"),
   run_date = run_date_chr,
